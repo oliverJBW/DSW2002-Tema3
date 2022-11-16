@@ -23,4 +23,64 @@
         </svg>
     </div>
 
+    <script>
+        let bola = document.getElementById('bola');
+        bola.style.top = "100px";
+        bola.style.left = "100px";
+
+        let cuerpo = document.querySelector('body');
+
+        let izquierda = document.querySelector(".derecha");
+        let derecha = document.querySelector(".izquierda");
+        let arriba = document.querySelector(".abajo");
+        let abajo = document.querySelector(".arriba");
+
+        izquierda.addEventListener("mouseover" , () => {
+            bola.style.left = parseInt(bola.style.left) + 10 + "px";
+            }
+        );
+
+        derecha.addEventListener("mouseover" , () => {
+            bola.style.left = parseInt(bola.style.left) - 10 + "px";
+            }
+        );
+
+        arriba.addEventListener("mouseover" , () => {
+            bola.style.top = parseInt(bola.style.top) + 10 + "px";
+            }
+        );
+
+        abajo.addEventListener("mouseover" , () => {
+            bola.style.top = parseInt(bola.style.top) - 10 + "px";
+            }
+        );
+
+        cuerpo.addEventListener("keydown", () => {
+            if (event.isComposing || event.keyCode === 87) {
+                bola.style.top = parseInt(bola.style.top) - 10 + "px";
+            }}   
+        );
+
+        cuerpo.addEventListener("keydown", () => {
+            if (event.isComposing || event.keyCode === 83) {
+                bola.style.top = parseInt(bola.style.top) + 10 + "px";
+            }}   
+        );
+
+        cuerpo.addEventListener("keydown", () => {
+            if (event.isComposing || event.keyCode === 65) {
+                bola.style.left = parseInt(bola.style.left) - 10 + "px";
+            }}   
+        );
+
+        cuerpo.addEventListener("keydown", () => {
+            if (event.isComposing || event.keyCode === 68) {
+                bola.style.left = parseInt(bola.style.left) + 10 + "px";
+            }}   
+        );
+            
+
+
+    </script>
+</body>
 </html>
