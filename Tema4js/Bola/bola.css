@@ -1,0 +1,40 @@
+body {
+  text-align: center;
+}
+
+#bola {
+  border: 1px solid blue;
+  width: 55px;
+  height: 55px;
+  border-radius: 30px;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  background-color: navy;
+}
+
+svg {
+  position: absolute;
+  background-color: lightblue;
+  border-radius: 15px;
+}
+
+.abajo {
+  top: 0px;
+  left: 15px;
+}
+
+.arriba {
+  bottom: 0px;
+  left: 15px;
+}
+
+.derecha {
+  left: 0;
+  top: 15px;
+}
+
+.izquierda {
+  right: 0;
+  top: 15px;
+}
