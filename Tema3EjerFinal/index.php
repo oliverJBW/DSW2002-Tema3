@@ -5,7 +5,7 @@
     -->
 
     <?php
-        $sql = "SELECT * FROM users ORDER BY 'name'";
+        $sql = "SELECT * FROM users ORDER BY name";
         $consulta = $link->query($sql);
         $filaConsulta = $consulta->fetch_array();
     ?>
