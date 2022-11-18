@@ -45,7 +45,10 @@
             </thead>
             <tbody>
             <?php 
-                $idSeleccionada = $_GET["category"];
+                $buscar = isset($_GET["search"]) ? true : false;
+                if ($buscar){
+                
+                $idSeleccionada = isset($_GET["category"]) ? $_GET["category"] : null;
 
                 $sql2 = "SELECT film.film_id, film.title, film.release_year, 
                 film.length FROM film, film_category WHERE film.film_id = 
@@ -55,25 +58,44 @@
                 $listadoPeliculas = $consulta2->fetch_array();
                 if ($listadoPeliculas == null){ ?>
                     <tr>
-                        <td rowspan="4"><b>No hay películas para esta categoría.</b></td>
+                        <td rowspan="4" class="center" ><b>No hay películas para esta categoría.</b></td>
                     </tr>
                 <?php } else {
                     while ($listadoPeliculas != null) {
                 ?>
-                <tr>
-                    <td><?php echo $listadoPeliculas["title"]?></td>
-                    <td class="center"><?php echo $listadoPeliculas["release_year"]?></td>
-                    <td class="center"><?php echo $listadoPeliculas["length"]?></td>
-                    <td class="actions">                            
-                        <a class="button" href="category_film.php?...">
-                            <button>Cambiar categorías</button>
-                        </a>               
-                    </td>
-                </tr>
+                    <tr>
+                        <td><?php echo $listadoPeliculas["title"]?></td>
+                        <td class="center"><?php echo $listadoPeliculas["release_year"]?></td>
+                        <td class="center"><?php echo $listadoPeliculas["length"]?></td>
+                        <td class="actions">                            
+                            <a class="button" href="category_film.php?idpelicula=<?php echo $listadoPeliculas["film_id"]?>">
+                                <button>Cambiar categorías</button>
+                            </a>               
+                        </td>
+                    </tr>
                 <?php 
                     $listadoPeliculas = $consulta2->fetch_array();
                     }
-                } 
+                    } 
+                }
+
+                $eliminar = isset($_GET["delete"]) ? true : false;
+                $idCategoria = isset($_GET["category"]) ? $_GET["category"] : false;
+                if ($eliminar && $idCategoria){
+                    $consulta4 = $link->query($sql);
+                    $arrayCategorias2 = $consulta4->fetch_array();
+                    $posible = true;
+                    
+                    if ($posible){
+                    $sqleliminar = "DELETE FROM `category` WHERE category_id='$idCategoria'"; 
+                        
+                    }
+                    else {
+                    ?>
+                    <p><b>No es posible eliminar de esta categoría porque tiene peliculas asignadas.</b> </p>
+                    <?php
+                    }
+                }
                 ?>
             </tbody>
         </table>
