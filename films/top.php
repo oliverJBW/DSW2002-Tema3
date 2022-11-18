@@ -10,3 +10,7 @@
     <header>
         <h1>Examen Tema 3</h1>
     </header>
+    <?php
+        @$link = new mysqli('db', 'root', 'test', 'sakila');
+        $error = $link->connect_error;
+    ?>
