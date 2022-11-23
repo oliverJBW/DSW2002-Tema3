@@ -82,17 +82,25 @@
                 $eliminar = isset($_GET["delete"]) ? true : false;
                 $idCategoria = isset($_GET["category"]) ? $_GET["category"] : false;
                 if ($eliminar && $idCategoria){
-                    $consulta4 = $link->query($sql);
+                    $sql4 = "SELECT * FROM `film_category` WHERE category_id='$idCategoria'";
+                    $consulta4 = $link->query($sql4);
                     $arrayCategorias2 = $consulta4->fetch_array();
-                    $posible = true;
+                    $posible = false;
+
+                    if($arrayCategorias2==null){
+                        $posible = true;
+                    }
                     
                     if ($posible){
-                    $sqleliminar = "DELETE FROM `category` WHERE category_id='$idCategoria'"; 
-                        
+                    $sqleliminar = "DELETE FROM `category` WHERE category_id='$idCategoria'";
+                    $link->query($sqleliminar);    
+                    ?>
+                    <div class="alert alert-success">Categoria eliminada satisfactoriamente"</div>
+                     <?php   
                     }
                     else {
                     ?>
-                    <p><b>No es posible eliminar de esta categoría porque tiene peliculas asignadas.</b> </p>
+                    <div class="alert alert-error">No es posible eliminar de esta categoría porque tiene peliculas asignadas.</div>
                     <?php
                     }
                 }

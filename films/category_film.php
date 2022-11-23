@@ -3,6 +3,17 @@
     <div class="alert alert-success">¡Ejemplo mensaje de éxito!</div>
     <div class="alert alert-error">¡Ejemplo mensaje de error!</div>
     -->
+    
+
+    <?php 
+      $sql = "SELECT * FROM 'film_category' WHERE film_id='$_GET[id_pelicula]'"
+      $consulta = $link->query($sql);
+      $arrayCategorias = $consulta->fetch_array();
+
+      //hacer un while, etc etc 
+
+    ?>
+
     <nav>
         <p><a href="film.php">Volver</a></p>
     </nav>

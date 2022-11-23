@@ -30,7 +30,7 @@
         $link->query($sqlcrear);
 
     ?>
-        <div class="alert alert-success">Usuario creado satisfactoriamente</div>
+        <div class="alert alert-success">Categoria creada satisfactoriamente</div>
     <?php
         }
     ?>
