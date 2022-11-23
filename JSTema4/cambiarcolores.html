@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar colores js</title>
+</head>
+<body>
+    <h1>Inicio</h1> 
+
+    <label for="">Color texto: 
+        <input type="color" name="colortexto" id="colortexto">
+    </label><br><br>
+    <label for="">Color fondo: 
+        <input type="color" name="colorfondo" id="colorfondo">
+    </label><br><br>
+    <label for="">Tamaño texto:
+        <input type="range" name="tamaño" id="tamaño" min="8" max="50">
+    </label><br><br>
+
+    <div class="estilo">
+        <p>Esto es un texto de prueba para cambiar.</p>
+    </div>   
+
+    <script>
+        const contenedor = document.querySelector('.estilo');
+        const inColor = document.getElementById("colortexto");
+        const inTamaño = document.getElementById('tamaño');
+        const inFondo = document.getElementById('colorfondo');
+
+        inColor.addEventListener('input', ()=> {
+            contenedor.style.color = inColor.value;
+            localStorage.setItem('color', inColor.value);
+        })
+
+        inTamaño.addEventListener('input', ()=>{
+            contenedor.style.fontSize = inTamaño.value + "px";
+            localStorage.setItem('tamaño', inTamaño.value);
+        })
+
+        inFondo.addEventListener('input', ()=>{
+            contenedor.style.backgroundColor = inFondo.value;
+        })
+
+    </script>
+</body>
+</html>
