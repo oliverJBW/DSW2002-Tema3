@@ -1,7 +1,7 @@
 <?php
     $color = (isset($_POST['textocolor'])) ? $_POST['textocolor'] : "blue";
     $fondo = (isset($_POST['fondocolor'])) ? $_POST['fondocolor'] : "green";
-    $tamaño = (isset($_POST['textotamaño'])) ? $_POST['textotamaño'] : "20";
+    $tamaño = (isset($_POST['textotamaño'])) ? $_POST['textotamaño'] : "30";
     setcookie("color", $color, time() + 120);
     setcookie("fondo", $fondo, time() + 120);
     setcookie("tamaño", $tamaño, time() + 120);
@@ -16,9 +16,9 @@
     
     <style>
         p {
-            color: <?php echo $_COOKIE['color'] ?>;
-            background-color: <?php echo $_COOKIE['fondo'] ?>;
-            font-size: <?php echo $_COOKIE['tamaño'] ?>px;
+            color: <?php echo $_POST['textocolor'] ?>;
+            background-color: <?php echo $_POST['fondocolor'] ?>;
+            font-size: <?php echo $_POST['textotamaño'] ?>px;
         }
     </style>
 
@@ -29,7 +29,7 @@
 
     <form action="cambiarletrasfondo.php" method="post">
         <label for="">Color Texto
-            <input type="color" name="textocolor" id="">
+            <input type="color" name="textocolor" id="" value="">
         </label><br><br>
         <label for="">Color Fondo
             <input type="color" name="fondocolor" id="">
