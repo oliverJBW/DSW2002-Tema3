@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Formulario</h1>
+    <form action="" name="formulario1">
+        <input type="text" name="texto1" id="">
+        <input type="text" name="texto2" id="">
+    </form>
+
+    <script>
+        document.formulario1.texto1.addEventListener('blur', ()=>{
+            console.log('abandona el texto1');
+            console.log(document.formulario1.texto1.value);
+            if (document.formulario1.texto1.value.includes('a')){
+                console.log('incorrecto');
+                document.formulario1.texto1.focus();
+            }
+        })
+    </script>
+</body>
+</html>

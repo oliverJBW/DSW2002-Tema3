@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .brisk {
+      color: red;
+      font-weight: bold;
+      text-shadow: 1px 1px 2px grey;
+    }
+
+    li:hover {
+      margin-left: -10px;
+    }
+  </style>
+  <script src="frameworks.js" defer></script>
+</head>
+<body>
+  <h1>Frameworks de Javascript</h1>
+  <main>
+    <section>
+      <h2>Elementos</h2>
+      <ul id="elements">
+        <li>Angular.js</li>
+        <li>React.js</li>
+        <li>Vue.js</li>
+        <li>Meteor.js</li>
+        <li>Mithril.js</li>
+        <li>Ember.js</li>
+        <li>Node.js</li>
+        <li>Polimer.js</li>
+        <li>Aurelia.js</li>
+        <li>Backbone.js</li>
+        <li>Deno.js</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Elementos seleccionados</h2>
+      <p>
+        <button onclick="orderSelected()">Ordenar</button>
+        <button onclick="returnSelected()">Devolver</button>
+      </p>
+      <ul id="selected"></ul>
+    </section>
+  </main>
+</body>
+</html>

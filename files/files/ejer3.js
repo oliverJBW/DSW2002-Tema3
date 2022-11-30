@@ -1,0 +1,1 @@
+let aleatorio = Math.random

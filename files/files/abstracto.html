@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #lienzo {
+            border: 1px solid black;
+            box-shadow: 5px 5px 5px black;
+            width: 500px;
+            height: 400px;
+            position: relative;
+            margin: 10px;
+            overflow: hidden;
+        }
+
+        .cuadro {
+            position: absolute;
+        }
+
+        .circulo {
+            position: absolute;
+            border-radius: 100%;
+        }
+    </style>
+    <script src="ejer3.js"></script>
+</head>
+<body>
+    <h1>Cuadro abstracto - Neoplasticismo</h1>
+    <div id="lienzo">
+        <div 
+            class="cuadro" 
+            style="background-color: blue;
+                    top: 10px;
+                    left: 5px;
+                    width: 140px;
+                    height: 60px;
+                    opacity: 0.7">
+        </div>
+        <div 
+        class="cuadro" 
+        style="background-color: yellow;
+                top: 80px;
+                left: 250px;
+                width: 200px;
+                height: 160px;
+                opacity: 1">
+        </div>
+        <div 
+        class="circulo" 
+        style="background-color: red;
+                top: 100px;
+                left: 305px;
+                width: 100px;
+                height: 260px;
+                opacity: 0.6">
+        </div>
+        <div 
+        class="circulo" 
+        style="background-color: green;
+                top: 150px;
+                left: 75px;
+                width: 400px;
+                height: 200px;
+                opacity: 0.6">
+        </div>
+    </div>
+    <button id="iniciar">Iniciar</button>
+    <button id="parar" disabled>Parar</button>
+</body>
+</html>
