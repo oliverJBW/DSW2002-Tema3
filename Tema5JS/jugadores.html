@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jugadores</title>
+    <script src="jugador.js"></script>
+    <script src="tarjeta.js" defer></script>
+    <style>
+        .tarjeta {
+            border: 1px rgb(0, 0, 0) solid;
+            position: relative;
+            color: white;
+            background-color: peru;
+            height: fit-content;
+            width: fit-content;
+            float: left;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Jugadores</h1>
+    <label for="">Nombre: 
+        <input type="text" name="" id="nombre">
+    </label><br><br>
+    <label for="">Seleccion: 
+        <input type="text" name="" id="seleccion">
+    </label><br><br>
+    <label for="">Camiseta: 
+        <input type="number" name="" id="camiseta">
+    </label><br><br>
+    <button onclick="insertarJugador()">Guardar</button>
+    <hr>
+    
+    <div id="principal">
+        
+    </div>
+
+</body>
+</html>
